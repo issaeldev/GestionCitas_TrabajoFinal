@@ -1,0 +1,900 @@
+JFDML JFormDesigner: "8.2.4.0.393" Java: "21.0.8" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {comp jPanel1::l:::x}"
+			"$verticalGroup": "par l {comp jPanel1::l::570:x}"
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 3
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "jPanel1"
+				"background": new java.awt.Color( 255, 255, 255, 255 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+					name: "jPanel2"
+					"background": new java.awt.Color( 45, 121, 198, 255 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "favicon1"
+						"font": new java.awt.Font( "Tahoma", 1, 18 )
+						"foreground": new java.awt.Color( 255, 255, 255, 255 )
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/View/imagenes/favicon.png" )
+						"text": "CitaSmart"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 20
+						"y": 10
+						"width": 130
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 750
+					"height": 50
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "jLabel2"
+					"font": new java.awt.Font( "Segoe UI", 1, 20 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"horizontalAlignment": 0
+					"text": "REGISTRAR DISPONIBILIDAD"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"y": 100
+					"width": 750
+					"height": 30
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnGuardarDispo"
+					"background": new java.awt.Color( 0, 102, 153, 255 )
+					"font": new java.awt.Font( "Segoe UI", 1, 14 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					"text": "Guardar disponibilidad"
+					"borderPainted": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnGuardarDispoActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 270
+					"y": 470
+					"width": 200
+					"height": 40
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "jLabel6"
+					"font": new java.awt.Font( "Segoe UI", 1, 14 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"text": "Configura tus horarios disponibles"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 60
+					"y": 160
+					"width": 240
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "regresarHomebtn"
+					"background": new java.awt.Color( 0, 102, 153, 255 )
+					"font": new java.awt.Font( "Segoe UI", 1, 14 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					"text": "< Volver"
+					"borderPainted": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "regresarHomebtnActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 20
+					"y": 60
+					"width": 130
+					"height": 30
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "jLabel1"
+					"font": new java.awt.Font( "Tahoma", 0, 14 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"text": "Domingo"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 390
+					"y": 280
+					"width": 60
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "jLabel3"
+					"font": new java.awt.Font( "Tahoma", 0, 14 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"text": "Lunes"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 60
+					"y": 200
+					"width": 60
+					"height": 20
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "jLabel4"
+					"font": new java.awt.Font( "Tahoma", 0, 14 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"text": "Martes"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 60
+					"y": 240
+					"width": 60
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "jLabel5"
+					"font": new java.awt.Font( "Tahoma", 0, 14 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"text": "Miércoles"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 60
+					"y": 280
+					"width": 60
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "jLabel7"
+					"font": new java.awt.Font( "Tahoma", 0, 14 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"text": "Jueves"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 60
+					"y": 320
+					"width": 60
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "jLabel8"
+					"font": new java.awt.Font( "Tahoma", 0, 14 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"text": "Viernes"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 390
+					"y": 200
+					"width": 60
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "jLabel9"
+					"font": new java.awt.Font( "Tahoma", 0, 14 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"text": "Sábado"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 390
+					"y": 240
+					"width": 60
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBoxLunes_fin"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "6:00"
+						addElement( "6:00" )
+						addElement( "7:00" )
+						addElement( "8:00" )
+						addElement( "9:00" )
+						addElement( "10:00" )
+						addElement( "11:00" )
+						addElement( "12:00" )
+						addElement( "13:00" )
+						addElement( "14:00" )
+						addElement( "15:00" )
+						addElement( "16:00" )
+						addElement( "17:00" )
+						addElement( "18:00" )
+						addElement( "19:00" )
+						addElement( "20:00" )
+					}
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "String"
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 220
+					"y": 200
+					"width": 70
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBoxLunes_inicio"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "6:00"
+						addElement( "6:00" )
+						addElement( "7:00" )
+						addElement( "8:00" )
+						addElement( "9:00" )
+						addElement( "10:00" )
+						addElement( "11:00" )
+						addElement( "12:00" )
+						addElement( "13:00" )
+						addElement( "14:00" )
+						addElement( "15:00" )
+						addElement( "16:00" )
+						addElement( "17:00" )
+						addElement( "18:00" )
+						addElement( "19:00" )
+						addElement( "20:00" )
+					}
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "String"
+					}
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "comboBoxLunes_inicioActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 130
+					"y": 200
+					"width": 70
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBoxMartes_inicio"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "6:00"
+						addElement( "6:00" )
+						addElement( "7:00" )
+						addElement( "8:00" )
+						addElement( "9:00" )
+						addElement( "10:00" )
+						addElement( "11:00" )
+						addElement( "12:00" )
+						addElement( "13:00" )
+						addElement( "14:00" )
+						addElement( "15:00" )
+						addElement( "16:00" )
+						addElement( "17:00" )
+						addElement( "18:00" )
+						addElement( "19:00" )
+						addElement( "20:00" )
+					}
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "String"
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 130
+					"y": 240
+					"width": 70
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBoxMartes_fin"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "6:00"
+						addElement( "6:00" )
+						addElement( "7:00" )
+						addElement( "8:00" )
+						addElement( "9:00" )
+						addElement( "10:00" )
+						addElement( "11:00" )
+						addElement( "12:00" )
+						addElement( "13:00" )
+						addElement( "14:00" )
+						addElement( "15:00" )
+						addElement( "16:00" )
+						addElement( "17:00" )
+						addElement( "18:00" )
+						addElement( "19:00" )
+						addElement( "20:00" )
+					}
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "String"
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 220
+					"y": 240
+					"width": 70
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBoxJueves_fin"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "6:00"
+						addElement( "6:00" )
+						addElement( "7:00" )
+						addElement( "8:00" )
+						addElement( "9:00" )
+						addElement( "10:00" )
+						addElement( "11:00" )
+						addElement( "12:00" )
+						addElement( "13:00" )
+						addElement( "14:00" )
+						addElement( "15:00" )
+						addElement( "16:00" )
+						addElement( "17:00" )
+						addElement( "18:00" )
+						addElement( "19:00" )
+						addElement( "20:00" )
+					}
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "String"
+					}
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "comboBoxJueves_finActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 220
+					"y": 320
+					"width": 70
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBoxJueves_inicio"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "6:00"
+						addElement( "6:00" )
+						addElement( "7:00" )
+						addElement( "8:00" )
+						addElement( "9:00" )
+						addElement( "10:00" )
+						addElement( "11:00" )
+						addElement( "12:00" )
+						addElement( "13:00" )
+						addElement( "14:00" )
+						addElement( "15:00" )
+						addElement( "16:00" )
+						addElement( "17:00" )
+						addElement( "18:00" )
+						addElement( "19:00" )
+						addElement( "20:00" )
+					}
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "String"
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 130
+					"y": 320
+					"width": 70
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBoxMiercoles_inicio"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "6:00"
+						addElement( "6:00" )
+						addElement( "7:00" )
+						addElement( "8:00" )
+						addElement( "9:00" )
+						addElement( "10:00" )
+						addElement( "11:00" )
+						addElement( "12:00" )
+						addElement( "13:00" )
+						addElement( "14:00" )
+						addElement( "15:00" )
+						addElement( "16:00" )
+						addElement( "17:00" )
+						addElement( "18:00" )
+						addElement( "19:00" )
+						addElement( "20:00" )
+					}
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "String"
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 130
+					"y": 280
+					"width": 70
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBoxMiercoles_fin"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "6:00"
+						addElement( "6:00" )
+						addElement( "7:00" )
+						addElement( "8:00" )
+						addElement( "9:00" )
+						addElement( "10:00" )
+						addElement( "11:00" )
+						addElement( "12:00" )
+						addElement( "13:00" )
+						addElement( "14:00" )
+						addElement( "15:00" )
+						addElement( "16:00" )
+						addElement( "17:00" )
+						addElement( "18:00" )
+						addElement( "19:00" )
+						addElement( "20:00" )
+					}
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "String"
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 220
+					"y": 280
+					"width": 70
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBoxDomingo_fin"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "6:00"
+						addElement( "6:00" )
+						addElement( "7:00" )
+						addElement( "8:00" )
+						addElement( "9:00" )
+						addElement( "10:00" )
+						addElement( "11:00" )
+						addElement( "12:00" )
+						addElement( "13:00" )
+						addElement( "14:00" )
+						addElement( "15:00" )
+						addElement( "16:00" )
+						addElement( "17:00" )
+						addElement( "18:00" )
+						addElement( "19:00" )
+						addElement( "20:00" )
+					}
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "String"
+					}
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "comboBoxDomingo_finActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 550
+					"y": 280
+					"width": 70
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBoxDomingo_inicio"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "6:00"
+						addElement( "6:00" )
+						addElement( "7:00" )
+						addElement( "8:00" )
+						addElement( "9:00" )
+						addElement( "10:00" )
+						addElement( "11:00" )
+						addElement( "12:00" )
+						addElement( "13:00" )
+						addElement( "14:00" )
+						addElement( "15:00" )
+						addElement( "16:00" )
+						addElement( "17:00" )
+						addElement( "18:00" )
+						addElement( "19:00" )
+						addElement( "20:00" )
+					}
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "String"
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 460
+					"y": 280
+					"width": 70
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBoxSabado_inicio"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "6:00"
+						addElement( "6:00" )
+						addElement( "7:00" )
+						addElement( "8:00" )
+						addElement( "9:00" )
+						addElement( "10:00" )
+						addElement( "11:00" )
+						addElement( "12:00" )
+						addElement( "13:00" )
+						addElement( "14:00" )
+						addElement( "15:00" )
+						addElement( "16:00" )
+						addElement( "17:00" )
+						addElement( "18:00" )
+						addElement( "19:00" )
+						addElement( "20:00" )
+					}
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "String"
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 460
+					"y": 240
+					"width": 70
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBoxViernes_inicio"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "6:00"
+						addElement( "6:00" )
+						addElement( "7:00" )
+						addElement( "8:00" )
+						addElement( "9:00" )
+						addElement( "10:00" )
+						addElement( "11:00" )
+						addElement( "12:00" )
+						addElement( "13:00" )
+						addElement( "14:00" )
+						addElement( "15:00" )
+						addElement( "16:00" )
+						addElement( "17:00" )
+						addElement( "18:00" )
+						addElement( "19:00" )
+						addElement( "20:00" )
+					}
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "String"
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 460
+					"y": 200
+					"width": 70
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBoxViernes_fin"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "6:00"
+						addElement( "6:00" )
+						addElement( "7:00" )
+						addElement( "8:00" )
+						addElement( "9:00" )
+						addElement( "10:00" )
+						addElement( "11:00" )
+						addElement( "12:00" )
+						addElement( "13:00" )
+						addElement( "14:00" )
+						addElement( "15:00" )
+						addElement( "16:00" )
+						addElement( "17:00" )
+						addElement( "18:00" )
+						addElement( "19:00" )
+						addElement( "20:00" )
+					}
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "String"
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 550
+					"y": 200
+					"width": 70
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBoxSabado_fin"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "6:00"
+						addElement( "6:00" )
+						addElement( "7:00" )
+						addElement( "8:00" )
+						addElement( "9:00" )
+						addElement( "10:00" )
+						addElement( "11:00" )
+						addElement( "12:00" )
+						addElement( "13:00" )
+						addElement( "14:00" )
+						addElement( "15:00" )
+						addElement( "16:00" )
+						addElement( "17:00" )
+						addElement( "18:00" )
+						addElement( "19:00" )
+						addElement( "20:00" )
+					}
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "String"
+					}
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 550
+					"y": 240
+					"width": 70
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnAgregarMartes"
+					"background": new java.awt.Color( 0, 102, 153, 255 )
+					"font": new java.awt.Font( "Tahoma", 1, 12 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					"text": "+"
+					"toolTipText": ""
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"borderPainted": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAgregarMartesActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 310
+					"y": 240
+					"width": 30
+					"height": 20
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnAgregarLunes"
+					"background": new java.awt.Color( 0, 102, 153, 255 )
+					"font": new java.awt.Font( "Tahoma", 1, 12 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					"text": "+"
+					"toolTipText": ""
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"borderPainted": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAgregarLunesActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 310
+					"y": 200
+					"width": 30
+					"height": 20
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnAgregarMiercoles"
+					"background": new java.awt.Color( 0, 102, 153, 255 )
+					"font": new java.awt.Font( "Tahoma", 1, 12 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					"text": "+"
+					"toolTipText": ""
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"borderPainted": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAgregarMiercolesActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 310
+					"y": 280
+					"width": 30
+					"height": 20
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnAgregarJueves"
+					"background": new java.awt.Color( 0, 102, 153, 255 )
+					"font": new java.awt.Font( "Tahoma", 1, 12 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					"text": "+"
+					"toolTipText": ""
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"borderPainted": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAgregarJuevesActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 310
+					"y": 320
+					"width": 30
+					"height": 20
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnAgregarDomingo"
+					"background": new java.awt.Color( 0, 102, 153, 255 )
+					"font": new java.awt.Font( "Tahoma", 1, 12 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					"text": "+"
+					"toolTipText": ""
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"borderPainted": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAgregarDomingoActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 640
+					"y": 280
+					"width": 30
+					"height": 20
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnAgregarSabado"
+					"background": new java.awt.Color( 0, 102, 153, 255 )
+					"font": new java.awt.Font( "Tahoma", 1, 12 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					"text": "+"
+					"toolTipText": ""
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"borderPainted": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAgregarSabadoActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 640
+					"y": 240
+					"width": 30
+					"height": 20
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnAgregarViernes"
+					"background": new java.awt.Color( 0, 102, 153, 255 )
+					"font": new java.awt.Font( "Tahoma", 1, 12 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					"text": "+"
+					"toolTipText": ""
+					"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+					"borderPainted": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnAgregarViernesActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 640
+					"y": 200
+					"width": 30
+					"height": 20
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "jScrollPane1"
+					add( new FormComponent( "javax.swing.JTable" ) {
+						name: "tablaSemana"
+						"background": new java.awt.Color( 255, 255, 255, 255 )
+						"font": new java.awt.Font( "Tahoma", 0, 14 )
+						"foreground": new java.awt.Color( 0, 0, 0, 255 )
+						"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector {
+							add( new java.util.Vector {
+								add( "6:00" )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							} )
+							add( new java.util.Vector {
+								add( "7:00" )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							} )
+							add( new java.util.Vector {
+								add( "8:00" )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							} )
+							add( new java.util.Vector {
+								add( "9:00" )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							} )
+							add( new java.util.Vector {
+								add( "10:00" )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							} )
+							add( new java.util.Vector {
+								add( "11:00" )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							} )
+							add( new java.util.Vector {
+								add( "12:00" )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							} )
+							add( new java.util.Vector {
+								add( "13:00" )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							} )
+							add( new java.util.Vector {
+								add( "14:00" )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							} )
+							add( new java.util.Vector {
+								add( "15:00" )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							} )
+							add( new java.util.Vector {
+								add( "16:00" )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							} )
+							add( new java.util.Vector {
+								add( "17:00" )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							} )
+							add( new java.util.Vector {
+								add( "18:00" )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							} )
+							add( new java.util.Vector {
+								add( "19:00" )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+								add( null )
+							} )
+						}, new java.util.Vector {
+							add( "Hora" )
+							add( "LUNES" )
+							add( "MARTES" )
+							add( "MIERCOLES" )
+							add( "JUEVES" )
+							add( "VIERNES" )
+							add( "SABADO" )
+							add( "DOMINGO" )
+						}, new java.util.Vector {
+							add( class java.lang.Object )
+							add( class java.lang.Object )
+							add( class java.lang.Object )
+							add( class java.lang.Object )
+							add( class java.lang.Object )
+							add( class java.lang.Object )
+							add( class java.lang.Object )
+							add( class java.lang.Object )
+						}, new java.util.Vector {
+							add( true )
+							add( true )
+							add( true )
+							add( true )
+							add( true )
+							add( true )
+							add( true )
+							add( true )
+						}, new java.util.Vector {
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+							add( null )
+						} )
+						"cursor": new java.awt.Cursor( 0 )
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 60
+					"y": 350
+					"width": 620
+					"height": 110
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "btnLimpiarTabla"
+					"background": new java.awt.Color( 0, 102, 153, 255 )
+					"font": new java.awt.Font( "Segoe UI", 1, 14 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					"text": "Limpiar Horario"
+					"toolTipText": ""
+					"borderPainted": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "btnLimpiarTablaActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 60
+					"y": 470
+					"width": 140
+					"height": 40
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) )
+	}
+}

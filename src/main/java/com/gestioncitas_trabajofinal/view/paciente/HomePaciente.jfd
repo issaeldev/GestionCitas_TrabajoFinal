@@ -1,0 +1,242 @@
+JFDML JFormDesigner: "8.2.4.0.393" Java: "21.0.8" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {comp jPanel1::l:::x}"
+			"$verticalGroup": "par l {comp jPanel1::l:::x}"
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 3
+			"resizable": false
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "jPanel1"
+				"background": new java.awt.Color( 255, 255, 255, 255 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "txtNombre"
+					"font": new java.awt.Font( "Tahoma", 1, 20 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"text": "BIENVENIDO(A) [NOMBRE]"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 210
+					"y": 90
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+					name: "jPanel2"
+					"background": new java.awt.Color( 45, 121, 198, 255 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "favicon1"
+						"font": new java.awt.Font( "Tahoma", 1, 18 )
+						"foreground": new java.awt.Color( 255, 255, 255, 255 )
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/View/imagenes/favicon.png" )
+						"text": "CitaSmart"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 20
+						"y": 10
+						"width": 130
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 180
+					"width": 570
+					"height": 50
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+					name: "jPanel3"
+					"background": new java.awt.Color( 131, 179, 227, 255 )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "inicioBtn"
+						"background": new java.awt.Color( 255, 255, 255, 255 )
+						"font": new java.awt.Font( "Tahoma", 1, 14 )
+						"foreground": new java.awt.Color( 0, 51, 102, 255 )
+						"text": "INICIO"
+						"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "inicioBtnActionPerformed", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"y": 170
+						"width": 180
+						"height": 28
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "perfilBtn"
+						"background": new java.awt.Color( 131, 179, 227, 255 )
+						"font": new java.awt.Font( "Tahoma", 1, 14 )
+						"foreground": new java.awt.Color( 0, 51, 102, 255 )
+						"text": "MI PERFIL"
+						"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "perfilBtnActionPerformed", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"y": 200
+						"width": 180
+						"height": 28
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "citasBtn"
+						"background": new java.awt.Color( 131, 179, 227, 255 )
+						"font": new java.awt.Font( "Tahoma", 1, 14 )
+						"foreground": new java.awt.Color( 0, 51, 102, 255 )
+						"text": "MIS CITAS"
+						"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "citasBtnActionPerformed", true ) )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"y": 230
+						"width": 180
+						"height": 28
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "userIcon"
+						"horizontalAlignment": 0
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/View/imagenes/user.png" )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"y": 10
+						"width": 180
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "usernameLbl"
+						"font": new java.awt.Font( "Tahoma", 1, 14 )
+						"foreground": new java.awt.Color( 0, 51, 102, 255 )
+						"horizontalAlignment": 0
+						"text": "Nombre de usuario"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"y": 110
+						"width": 180
+						"height": 20
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+						name: "jPanel4"
+						"background": new java.awt.Color( 195, 224, 242, 255 )
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "cerrarsesionBtn"
+							"background": new java.awt.Color( 195, 224, 242, 255 )
+							"font": new java.awt.Font( "Tahoma", 1, 14 )
+							"foreground": new java.awt.Color( 0, 51, 102, 255 )
+							"text": "CERRAR SESION"
+							"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "cerrarsesionBtnActionPerformed", true ) )
+						}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+							"y": 10
+							"width": 180
+							"height": 28
+						} )
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"y": 520
+						"width": 180
+						"height": 50
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 180
+					"height": 570
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+					name: "jPanel5"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					"border": new javax.swing.border.LineBorder( new java.awt.Color( 0, 51, 102, 255 ), 2, false )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "titleCita"
+						"font": new java.awt.Font( "Tahoma", 1, 14 )
+						"foreground": new java.awt.Color( 0, 0, 0, 255 )
+						"horizontalAlignment": 0
+						"text": "TU PRÓXIMA CITA"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"y": 10
+						"width": 430
+						"height": 20
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "especialidadLbl"
+						"font": new java.awt.Font( "Tahoma", 3, 14 )
+						"foreground": new java.awt.Color( 0, 0, 0, 255 )
+						"text": "Especialidad: "
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 40
+						"y": 50
+						"width": 110
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "medicoLbl"
+						"font": new java.awt.Font( "Tahoma", 3, 14 )
+						"foreground": new java.awt.Color( 0, 0, 0, 255 )
+						"text": "Médico: "
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 40
+						"y": 70
+						"width": 110
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "fechaLbl"
+						"font": new java.awt.Font( "Tahoma", 3, 14 )
+						"foreground": new java.awt.Color( 0, 0, 0, 255 )
+						"text": "Fecha: "
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 40
+						"y": 90
+						"width": 110
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "jLabel1"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 160
+						"y": 50
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lblMedico"
+						"font": new java.awt.Font( "Segoe UI", 0, 14 )
+						"foreground": new java.awt.Color( 0, 0, 0, 255 )
+						"text": "por favor"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 160
+						"y": 70
+						"width": 240
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lblFecha"
+						"font": new java.awt.Font( "Segoe UI", 0, 14 )
+						"foreground": new java.awt.Color( 0, 0, 0, 255 )
+						"text": "reserve una cita."
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 160
+						"y": 90
+						"width": 250
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "lblEspecialidad"
+						"font": new java.awt.Font( "Segoe UI", 0, 14 )
+						"foreground": new java.awt.Color( 0, 0, 0, 255 )
+						"text": "No se han registrado citas,"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 160
+						"y": 50
+						"width": 240
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 250
+					"y": 150
+					"width": 430
+					"height": 140
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "reservarCitaBtn"
+					"background": new java.awt.Color( 0, 102, 153, 255 )
+					"font": new java.awt.Font( "Tahoma", 1, 14 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					"text": "Reservar una cita"
+					"borderPainted": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "reservarCitaBtnActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 380
+					"y": 320
+					"width": 170
+					"height": 40
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) )
+		add( new FormComponent( "javax.swing.JLabel" ) {
+			name: "favicon"
+			"font": new java.awt.Font( "Tahoma", 1, 18 )
+			"foreground": new java.awt.Color( 0, 0, 0, 255 )
+			"icon": new com.jformdesigner.model.SwingIcon( 0, "/View/imagenes/favicon.png" )
+			"text": "LOGO"
+		} )
+	}
+}

@@ -1,0 +1,236 @@
+JFDML JFormDesigner: "8.2.4.0.393" Java: "21.0.8" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {comp jPanel1::l:::x}"
+			"$verticalGroup": "par l {comp jPanel1::l::570:x}"
+		} ) {
+			name: "this"
+			"defaultCloseOperation": 3
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+				name: "jPanel1"
+				"background": new java.awt.Color( 255, 255, 255, 255 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class com.jformdesigner.runtime.NullLayout ) ) {
+					name: "jPanel2"
+					"background": new java.awt.Color( 45, 121, 198, 255 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "favicon1"
+						"font": new java.awt.Font( "Tahoma", 1, 18 )
+						"foreground": new java.awt.Color( 255, 255, 255, 255 )
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/View/imagenes/favicon.png" )
+						"text": "CitaSmart"
+					}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+						"x": 20
+						"y": 10
+						"width": 130
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"width": 750
+					"height": 50
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBoxMedicos"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					"font": new java.awt.Font( "Segoe UI", 0, 14 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "[Selecciona una opción]"
+						addElement( "[Selecciona una opción]" )
+						addElement( "Medico 1" )
+						addElement( "Medico 2" )
+						addElement( "Medico 3" )
+						addElement( "Medico 4" )
+						addElement( "Medico 5" )
+					}
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "String"
+					}
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "comboBoxMedicosActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 70
+					"y": 310
+					"width": 240
+					"height": 30
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "jLabel1"
+					"font": new java.awt.Font( "Segoe UI", 1, 14 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"text": "Seleccionar médico"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 70
+					"y": 280
+					"width": 180
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "jLabel2"
+					"font": new java.awt.Font( "Segoe UI", 1, 20 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"horizontalAlignment": 0
+					"text": "RESERVAR CITA MEDICA"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"y": 100
+					"width": 750
+					"height": 30
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBoxEspecialidades"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+					"font": new java.awt.Font( "Segoe UI", 0, 14 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "[Selecciona una opción]"
+						addElement( "[Selecciona una opción]" )
+					}
+					auxiliary() {
+						"JavaCodeGenerator.typeParameters": "String"
+					}
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "comboBoxEspecialidadesActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 70
+					"y": 220
+					"width": 240
+					"height": 30
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "jLabel3"
+					"font": new java.awt.Font( "Segoe UI", 1, 14 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"text": "Especialidad"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 70
+					"y": 190
+					"width": 180
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "siguienteBtn"
+					"background": new java.awt.Color( 0, 102, 153, 255 )
+					"font": new java.awt.Font( "Segoe UI", 1, 14 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					"text": "Siguiente ->"
+					"borderPainted": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "siguienteBtnActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 500
+					"y": 450
+					"width": 140
+					"height": 40
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "jScrollPane1"
+					add( new FormComponent( "javax.swing.JTable" ) {
+						name: "tablaFechaDispo"
+						"background": new java.awt.Color( 255, 255, 255, 255 )
+						"font": new java.awt.Font( "Segoe UI", 0, 14 )
+						"foreground": new java.awt.Color( 0, 0, 0, 255 )
+						"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector {
+							add( new java.util.Vector {
+								add( null )
+								add( null )
+							} )
+							add( new java.util.Vector {
+								add( null )
+								add( null )
+							} )
+							add( new java.util.Vector {
+								add( null )
+								add( null )
+							} )
+							add( new java.util.Vector {
+								add( null )
+								add( null )
+							} )
+							add( new java.util.Vector {
+								add( null )
+								add( null )
+							} )
+							add( new java.util.Vector {
+								add( null )
+								add( null )
+							} )
+						}, new java.util.Vector {
+							add( "Día" )
+							add( "Hora" )
+						}, new java.util.Vector {
+							add( class java.lang.Object )
+							add( class java.lang.Object )
+						}, new java.util.Vector {
+							add( false )
+							add( false )
+						}, new java.util.Vector {
+							add( null )
+							add( null )
+						} )
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 370
+					"y": 200
+					"width": 300
+					"height": 150
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "jLabel6"
+					"font": new java.awt.Font( "Segoe UI", 1, 14 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"horizontalAlignment": 0
+					"text": "Fechas disponibles"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 370
+					"y": 170
+					"width": 300
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "volverBtn"
+					"background": new java.awt.Color( 0, 102, 153, 255 )
+					"font": new java.awt.Font( "Segoe UI", 1, 14 )
+					"foreground": new java.awt.Color( 255, 255, 255, 255 )
+					"text": "< Volver"
+					"borderPainted": false
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "volverBtnActionPerformed", true ) )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 20
+					"y": 60
+					"width": 130
+					"height": 30
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "jLabel4"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 370
+					"y": 350
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "jLabel5"
+					"font": new java.awt.Font( "Segoe UI", 0, 18 )
+					"foreground": new java.awt.Color( 0, 0, 0, 255 )
+					"text": "Motivo de la Cita"
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 140
+					"y": 400
+					"width": 150
+					"height": 30
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "jScrollPane3"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "txtArea"
+						"background": new java.awt.Color( 255, 255, 255, 255 )
+						"columns": 20
+						"font": new java.awt.Font( "Segoe UI", 0, 14 )
+						"foreground": new java.awt.Color( 0, 0, 0, 255 )
+						"rows": 5
+						"toolTipText": "Ingrese una descripción corta sobre sus síntomas"
+					} )
+				}, new FormLayoutConstraints( class com.jformdesigner.runtime.NullConstraints ) {
+					"x": 70
+					"y": 440
+					"width": 300
+					"height": 60
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) )
+	}
+}

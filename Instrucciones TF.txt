@@ -1,0 +1,15 @@
+1. Instalar MySQL desde la pagina oficial con el MSI (recordar las credenciales)
+2. Verificar las dependencias del pom.xml
+<!-- Dependencia de MySQL JDBC -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version>  <!-- Usa la última versión disponible -->
+        </dependency>
+3. Entrar a la BD desde el Command Line Client con las credenciales
+4. Cargar la base de datos con 
+source C:/Users/issael/Documents/USIL/7MO/SISTEMAS DE INFORMACION/GestionCitas_TrabajoFinal/GestionCitas_TrabajoFinal/CreacionDeBDyTablas.sql;
+source C:/Users/issael/Documents/USIL/7MO/SISTEMAS DE INFORMACION/GestionCitas_TrabajoFinal/GestionCitas_TrabajoFinal/CreacionDeVistas.sql;
+source C:/Users/issael/Documents/USIL/7MO/SISTEMAS DE INFORMACION/GestionCitas_TrabajoFinal/GestionCitas_TrabajoFinal/InsercionDeDatos.sql;
+5. Registrar el USER y PASSWORD (configuradas en la instalacion), si no recuerdas tu USER ejecuta
+SELECT USER();

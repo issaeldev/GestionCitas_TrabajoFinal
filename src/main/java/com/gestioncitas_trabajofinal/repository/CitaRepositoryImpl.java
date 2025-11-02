@@ -54,10 +54,16 @@ public class CitaRepositoryImpl implements CitaRepository {
     public List<Cita> obtenerCitasPorMedico(int idMedico) {
         List<Cita> citas = new ArrayList<>();
         String sql = """
-            SELECT c.*, u.nombres, u.apellidos 
+            SELECT c.id, c.fecha, c.motivo, c.estado,
+                   p.id AS id_paciente, u_pac.nombres AS nombre_paciente, u_pac.apellidos AS apellido_paciente,
+                   m.id AS id_medico, u_med.nombres AS nombre_medico, u_med.apellidos AS apellido_medico,
+                   e.id AS id_especialidad, e.nombre AS nombre_especialidad
             FROM citas c
             JOIN pacientes p ON c.id_paciente = p.id
-            JOIN usuarios u ON p.id = u.id
+            JOIN usuarios u_pac ON p.id = u_pac.id
+            JOIN medicos m ON c.id_medico = m.id
+            JOIN usuarios u_med ON m.id = u_med.id
+            JOIN especialidades e ON m.id_especialidad = e.id
             WHERE c.id_medico = ?
             ORDER BY c.fecha
         """;
@@ -67,20 +73,29 @@ public class CitaRepositoryImpl implements CitaRepository {
             while (rs.next()) {
                 Cita cita = new Cita();
                 cita.setId(rs.getInt("id"));
-                Paciente paciente = new Paciente();
-                paciente.setId(rs.getInt("id_paciente"));
-                paciente.setNombre(rs.getString("nombres"));
-                paciente.setApellido(rs.getString("apellidos"));
-                cita.setPaciente(paciente);
-
-                // Aquí no se necesita el objeto Medico completo, solo el ID
-                Medico medico = new Medico();
-                medico.setId(idMedico);
-                cita.setMedico(medico);
-
                 cita.setFechaHora(rs.getTimestamp("fecha").toLocalDateTime());
                 cita.setMotivo(rs.getString("motivo"));
                 cita.setEstado(EstadoCita.valueOf(rs.getString("estado")));
+                
+                // Paciente con datos completos
+                Paciente paciente = new Paciente();
+                paciente.setId(rs.getInt("id_paciente"));
+                paciente.setNombre(rs.getString("nombre_paciente"));
+                paciente.setApellido(rs.getString("apellido_paciente"));
+                cita.setPaciente(paciente);
+
+                // Médico con datos completos y especialidad
+                Medico medico = new Medico();
+                medico.setId(rs.getInt("id_medico"));
+                medico.setNombre(rs.getString("nombre_medico"));
+                medico.setApellido(rs.getString("apellido_medico"));
+                
+                Especialidad especialidad = new Especialidad();
+                especialidad.setId(rs.getInt("id_especialidad"));
+                especialidad.setNombre(rs.getString("nombre_especialidad"));
+                medico.setEspecialidad(especialidad);
+                
+                cita.setMedico(medico);
 
                 citas.add(cita);
             }
@@ -97,11 +112,14 @@ public class CitaRepositoryImpl implements CitaRepository {
         List<Cita> citas = new ArrayList<>();
         String sql = """
             SELECT c.id, c.fecha, c.motivo, c.estado,
-                   m.id AS id_medico, u.nombres AS nombre_medico, u.apellidos AS apellido_medico,
+                   p.id AS id_paciente, u_pac.nombres AS nombre_paciente, u_pac.apellidos AS apellido_paciente,
+                   m.id AS id_medico, u_med.nombres AS nombre_medico, u_med.apellidos AS apellido_medico,
                    e.id AS id_especialidad, e.nombre AS nombre_especialidad
             FROM citas c
+            JOIN pacientes p ON c.id_paciente = p.id
+            JOIN usuarios u_pac ON p.id = u_pac.id
             JOIN medicos m ON c.id_medico = m.id
-            JOIN usuarios u ON m.id = u.id
+            JOIN usuarios u_med ON m.id = u_med.id
             JOIN especialidades e ON m.id_especialidad = e.id
             WHERE c.id_paciente = ?
             ORDER BY c.fecha
@@ -116,10 +134,14 @@ public class CitaRepositoryImpl implements CitaRepository {
                 cita.setMotivo(rs.getString("motivo"));
                 cita.setEstado(EstadoCita.valueOf(rs.getString("estado")));
 
+                // Paciente con datos completos
                 Paciente paciente = new Paciente();
-                paciente.setId(idPaciente);
+                paciente.setId(rs.getInt("id_paciente"));
+                paciente.setNombre(rs.getString("nombre_paciente"));
+                paciente.setApellido(rs.getString("apellido_paciente"));
                 cita.setPaciente(paciente);
 
+                // Médico con datos completos y especialidad
                 Medico medico = new Medico();
                 medico.setId(rs.getInt("id_medico"));
                 medico.setNombre(rs.getString("nombre_medico"));
@@ -159,9 +181,7 @@ public class CitaRepositoryImpl implements CitaRepository {
     @Override
     public Cita obtenerProximaCitaPorPaciente(int idPaciente) {
         String sql = "SELECT * FROM citas WHERE id_paciente = ? AND fecha > NOW() AND estado = 'EN_ESPERA' ORDER BY fecha ASC LIMIT 1";
-        try (Connection conn = ConexionBD.getConecction();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-
+        try (PreparedStatement stmt = conexion.prepareStatement(sql)) {
             stmt.setInt(1, idPaciente);
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {

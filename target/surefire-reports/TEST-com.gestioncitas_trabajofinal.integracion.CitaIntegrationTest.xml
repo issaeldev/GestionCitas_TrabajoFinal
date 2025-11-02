@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.gestioncitas_trabajofinal.integracion.CitaIntegrationTest" time="0.91" tests="10" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="C:\Users\issael\Documents\USIL\7MO\SISTEMAS DE INFORMACION\TF\GestionCitas_TrabajoFinal\GestionCitas_TrabajoFinal\target\test-classes;C:\Users\issael\Documents\USIL\7MO\SISTEMAS DE INFORMACION\TF\GestionCitas_TrabajoFinal\GestionCitas_TrabajoFinal\target\classes;C:\Users\issael\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar;C:\Users\issael\.m2\repository\com\google\protobuf\protobuf-java\3.21.9\protobuf-java-3.21.9.jar;C:\Users\issael\.m2\repository\org\netbeans\external\AbsoluteLayout\RELEASE250\AbsoluteLayout-RELEASE250.jar;C:\Users\issael\.m2\repository\org\mindrot\jbcrypt\0.4\jbcrypt-0.4.jar;C:\Users\issael\.m2\repository\com\toedter\jcalendar\1.4\jcalendar-1.4.jar;C:\Users\issael\.m2\repository\com\sun\mail\jakarta.mail\2.0.1\jakarta.mail-2.0.1.jar;C:\Users\issael\.m2\repository\com\sun\activation\jakarta.activation\2.0.1\jakarta.activation-2.0.1.jar;C:\Users\issael\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\issael\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\issael\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\issael\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\issael\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\issael\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\issael\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\issael\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\issael\.m2\repository\org\mockito\mockito-junit-jupiter\5.8.0\mockito-junit-jupiter-5.8.0.jar;C:\Users\issael\.m2\repository\org\mockito\mockito-core\5.8.0\mockito-core-5.8.0.jar;C:\Users\issael\.m2\repository\net\bytebuddy\byte-buddy\1.14.10\byte-buddy-1.14.10.jar;C:\Users\issael\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.10\byte-buddy-agent-1.14.10.jar;C:\Users\issael\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;"/>
+    <property name="java.vm.vendor" value="Microsoft"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://www.microsoft.com"/>
+    <property name="user.timezone" value="America/Lima"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="user.country" value="PE"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.boot.library.path" value="C:\Users\issael\.jdks\ms-17.0.16\bin"/>
+    <property name="sun.java.command" value="C:\Users\issael\AppData\Local\Temp\surefire11045709298100383542\surefirebooter-20251102002800620_3.jar C:\Users\issael\AppData\Local\Temp\surefire11045709298100383542 2025-11-02T00-28-00_432-jvmRun1 surefire-20251102002800620_1tmp surefire_0-20251102002800620_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\issael\Documents\USIL\7MO\SISTEMAS DE INFORMACION\TF\GestionCitas_TrabajoFinal\GestionCitas_TrabajoFinal\target\test-classes;C:\Users\issael\Documents\USIL\7MO\SISTEMAS DE INFORMACION\TF\GestionCitas_TrabajoFinal\GestionCitas_TrabajoFinal\target\classes;C:\Users\issael\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar;C:\Users\issael\.m2\repository\com\google\protobuf\protobuf-java\3.21.9\protobuf-java-3.21.9.jar;C:\Users\issael\.m2\repository\org\netbeans\external\AbsoluteLayout\RELEASE250\AbsoluteLayout-RELEASE250.jar;C:\Users\issael\.m2\repository\org\mindrot\jbcrypt\0.4\jbcrypt-0.4.jar;C:\Users\issael\.m2\repository\com\toedter\jcalendar\1.4\jcalendar-1.4.jar;C:\Users\issael\.m2\repository\com\sun\mail\jakarta.mail\2.0.1\jakarta.mail-2.0.1.jar;C:\Users\issael\.m2\repository\com\sun\activation\jakarta.activation\2.0.1\jakarta.activation-2.0.1.jar;C:\Users\issael\.m2\repository\org\junit\jupiter\junit-jupiter\5.9.3\junit-jupiter-5.9.3.jar;C:\Users\issael\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.9.3\junit-jupiter-api-5.9.3.jar;C:\Users\issael\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\issael\.m2\repository\org\junit\platform\junit-platform-commons\1.9.3\junit-platform-commons-1.9.3.jar;C:\Users\issael\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\issael\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.9.3\junit-jupiter-params-5.9.3.jar;C:\Users\issael\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.9.3\junit-jupiter-engine-5.9.3.jar;C:\Users\issael\.m2\repository\org\junit\platform\junit-platform-engine\1.9.3\junit-platform-engine-1.9.3.jar;C:\Users\issael\.m2\repository\org\mockito\mockito-junit-jupiter\5.8.0\mockito-junit-jupiter-5.8.0.jar;C:\Users\issael\.m2\repository\org\mockito\mockito-core\5.8.0\mockito-core-5.8.0.jar;C:\Users\issael\.m2\repository\net\bytebuddy\byte-buddy\1.14.10\byte-buddy-1.14.10.jar;C:\Users\issael\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.10\byte-buddy-agent-1.14.10.jar;C:\Users\issael\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\issael"/>
+    <property name="user.language" value="es"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2025-07-15"/>
+    <property name="java.home" value="C:\Users\issael\.jdks\ms-17.0.16"/>
+    <property name="file.separator" value="\"/>
+    <property name="style.color" value="always"/>
+    <property name="basedir" value="C:\Users\issael\Documents\USIL\7MO\SISTEMAS DE INFORMACION\TF\GestionCitas_TrabajoFinal\GestionCitas_TrabajoFinal"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\issael\AppData\Local\Temp\surefire11045709298100383542\surefirebooter-20251102002800620_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.16+8-LTS"/>
+    <property name="user.name" value="issael"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="Cp1252"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Microsoft-11926163"/>
+    <property name="maven.ext.class.path" value="C:\Users\issael\AppData\Local\Programs\IntelliJ IDEA Ultimate\plugins\maven\lib\maven-event-listener.jar"/>
+    <property name="localRepository" value="C:\Users\issael\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://github.com/microsoft/openjdk/issues"/>
+    <property name="java.io.tmpdir" value="C:\Users\issael\AppData\Local\Temp\"/>
+    <property name="idea.version" value="2025.2.3"/>
+    <property name="java.version" value="17.0.16"/>
+    <property name="user.dir" value="C:\Users\issael\Documents\USIL\7MO\SISTEMAS DE INFORMACION\TF\GestionCitas_TrabajoFinal\GestionCitas_TrabajoFinal"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="jansi.passthrough" value="true"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Users\issael\.jdks\ms-17.0.16\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Python314\Scripts\;C:\Python314\;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\dotnet\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Git\cmd;C:\Program Files (x86)\Nodist\bin;C:\Program Files\Docker\Docker\resources\bin;C:\Program Files\Microsoft SQL Server\170\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\Tools\Binn\;C:\Program Files\Microsoft SQL Server\160\DTS\Binn\;C:\Program Files (x86)\Gpg4win\..\GnuPG\bin;C:\ProgramData\chocolatey\bin;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\msys64\ucrt64\bin;C:\Users\issael\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\issael\AppData\Local\Programs\mongosh\;C:\GnuWin32\bin;C:\Users\issael\AppData\Roaming\npm;C:\Program Files\nodejs;C:\Users\issael\AppData\Local\JetBrains\Toolbox\scripts;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Microsoft"/>
+    <property name="java.vm.version" value="17.0.16+8-LTS"/>
+    <property name="java.specification.maintenance.version" value="1"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="maven.repo.local" value="C:\Users\issael\.m2\repository"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="testConexionBaseDatos" classname="com.gestioncitas_trabajofinal.integracion.CitaIntegrationTest" time="0.053">
+    <system-out><![CDATA[
+======================================================================
+   INICIANDO PRUEBAS DE INTEGRACION - GESTION DE CITAS
+======================================================================
+INFO: Conexión a la base de datos establecida exitosamente.
+[OK] Paciente encontrado: Carlos Alberto Ramos L├│pez (ID: 1)
+[OK] Medico encontrado: Andr├®s Felipe Salazar Huam├ín - Cardiolog├¡a (ID: 11)
+[OK] Conexion establecida
+[OK] Controlador inicializado (SIN notificaciones por email)
+[OK] Datos de prueba cargados desde la BD
+
+─────────────────────────────────────────────────────────────────
+> Verificando conexion a la base de datos...
+  [OK] Conexion valida y funcional
+[OK] Prueba completada
+
+]]></system-out>
+  </testcase>
+  <testcase name="testRegistrarNuevaCita" classname="com.gestioncitas_trabajofinal.integracion.CitaIntegrationTest" time="0.037">
+    <system-out><![CDATA[─────────────────────────────────────────────────────────────────
+> Registrando nueva cita en la BD...
+  [OK] Cita registrada: LUNES 10:00 AM
+  [OK] Motivo: Consulta de control - Test de Integracion
+[OK] Prueba completada
+
+]]></system-out>
+  </testcase>
+  <testcase name="testObtenerCitasPorPaciente" classname="com.gestioncitas_trabajofinal.integracion.CitaIntegrationTest" time="0.017">
+    <system-out><![CDATA[─────────────────────────────────────────────────────────────────
+> Consultando citas del paciente ID: 1
+  [OK] Se encontraron 0 cita(s)
+  [OK] Integridad de datos verificada
+[OK] Prueba completada
+
+]]></system-out>
+  </testcase>
+  <testcase name="testObtenerCitasPorMedico" classname="com.gestioncitas_trabajofinal.integracion.CitaIntegrationTest" time="0.005">
+    <system-out><![CDATA[─────────────────────────────────────────────────────────────────
+> Consultando citas del medico ID: 11
+  [OK] Se encontraron 0 cita(s) para el medico
+  [OK] Todas las citas pertenecen al medico correcto
+[OK] Prueba completada
+
+]]></system-out>
+  </testcase>
+  <testcase name="testObtenerProximaCita" classname="com.gestioncitas_trabajofinal.integracion.CitaIntegrationTest" time="0.004">
+    <system-out><![CDATA[─────────────────────────────────────────────────────────────────
+> Buscando proxima cita pendiente del paciente...
+  [WARN] No hay proximas citas pendientes para este paciente
+[OK] Prueba completada
+
+]]></system-out>
+  </testcase>
+  <testcase name="testActualizarEstadoCita" classname="com.gestioncitas_trabajofinal.integracion.CitaIntegrationTest" time="0.031">
+    <system-out><![CDATA[─────────────────────────────────────────────────────────────────
+> Actualizando estado de una cita...
+  [INFO] No hay citas existentes, creando una nueva...
+  - Cita ID: 29
+  - Estado anterior: EN_ESPERA
+  [OK] Estado actualizado a: REALIZADA
+[OK] Prueba completada
+
+]]></system-out>
+  </testcase>
+  <testcase name="testCancelarCita" classname="com.gestioncitas_trabajofinal.integracion.CitaIntegrationTest" time="0.038">
+    <system-out><![CDATA[─────────────────────────────────────────────────────────────────
+> Cancelando una cita...
+  [WARN] No hay citas en estado EN_ESPERA para cancelar
+  [INFO] Registrando nueva cita para poder cancelarla...
+  [OK] Nueva cita creada y cancelada exitosamente
+[OK] Prueba completada
+
+]]></system-out>
+  </testcase>
+  <testcase name="testFlujoCompletoRegistrarConsultarCancelar" classname="com.gestioncitas_trabajofinal.integracion.CitaIntegrationTest" time="0.042">
+    <system-out><![CDATA[─────────────────────────────────────────────────────────────────
+> Ejecutando flujo completo de gestion de cita...
+  [1/4] Registrando nueva cita...
+      [OK] Cita registrada para MIERCOLES 15:30
+  [2/4] Consultando citas del paciente...
+      ✓ Cita encontrada en BD (ID: 31)
+  [3/4] Verificando estado de la cita...
+      ✓ Estado correcto: EN_ESPERA
+  [4/4] Cancelando la cita...
+      [OK] Cita cancelada exitosamente
+  [OK] Flujo completo ejecutado correctamente
+[OK] Prueba completada
+
+]]></system-out>
+  </testcase>
+  <testcase name="testIntegridadReferencialDatos" classname="com.gestioncitas_trabajofinal.integracion.CitaIntegrationTest" time="0.015">
+    <system-out><![CDATA[─────────────────────────────────────────────────────────────────
+> Verificando integridad referencial de datos en BD...
+  [OK] 0 cita(s) verificadas
+  [OK] Integridad referencial validada (Paciente -> Cita -> Medico -> Especialidad)
+[OK] Prueba completada
+
+]]></system-out>
+  </testcase>
+  <testcase name="testRendimientoConsultasMultiples" classname="com.gestioncitas_trabajofinal.integracion.CitaIntegrationTest" time="0.089">
+    <system-out><![CDATA[─────────────────────────────────────────────────────────────────
+> Realizando prueba de rendimiento con consultas multiples...
+  - Ejecutando 50 consultas a la BD...
+
+  =================================================================
+                    REPORTE DE RENDIMIENTO
+  =================================================================
+    Total de consultas:        50
+    Tiempo total:              83 ms
+    Promedio por consulta:     1.66 ms
+    Consultas por segundo:     602.41
+  =================================================================
+  [OK] Rendimiento aceptable
+[OK] Prueba completada
+
+]]></system-out>
+  </testcase>
+</testsuite>

@@ -10,6 +10,8 @@ import com.gestioncitas_trabajofinal.model.Usuario;
 import com.gestioncitas_trabajofinal.strategy.MedicoLoginStrategy;
 import com.gestioncitas_trabajofinal.strategy.PacienteLoginStrategy;
 import com.gestioncitas_trabajofinal.service.LoginContext;
+import com.gestioncitas_trabajofinal.seguridad.CaptchaGenerator;
+
 
 import javax.swing.JOptionPane;
 
@@ -21,6 +23,9 @@ import javax.swing.JOptionPane;
 public class Login extends javax.swing.JFrame {
     
     private final LoginController loginController;
+    // Variables para el Captcha
+    private CaptchaGenerator captchaGenerator;
+    private String currentCaptchaText;
 
     /**
      * Constructor que inicializa los componentes de la ventana y las dependencias.
@@ -29,6 +34,7 @@ public class Login extends javax.swing.JFrame {
         initComponents();
         this.loginController = new LoginController();
         setLocationRelativeTo(null);
+        captchaGenerator = new CaptchaGenerator();
     }
     
 
@@ -201,6 +207,19 @@ public class Login extends javax.swing.JFrame {
     private void realizarLogin() {
         String correo = userTxt.getText().trim();
         String password = new String(passTxt.getPassword()).trim();
+        
+        
+        // Mostrar el diálogo de verificación captcha
+        CaptchaDialog captchaDialog = new CaptchaDialog(this, true);
+        captchaDialog.setLocationRelativeTo(this);
+        captchaDialog.setVisible(true);
+
+        // Si el usuario no pasó la verificación, cancelamos el login
+        if (!captchaDialog.isCaptchaValidado()) {
+            JOptionPane.showMessageDialog(this, "Debes verificar el captcha antes de iniciar sesión.", "Verificación requerida", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
 
         if (correo.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, ingrese correo y contraseña.", "Campos vacíos", JOptionPane.WARNING_MESSAGE);

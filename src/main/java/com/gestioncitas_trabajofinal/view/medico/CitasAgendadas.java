@@ -43,14 +43,16 @@ public class CitasAgendadas extends javax.swing.JFrame {
         DefaultTableModel modelo = (DefaultTableModel) tablaCitasAgendadas.getModel();
         modelo.setRowCount(0);
 
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        DateTimeFormatter formatoFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        DateTimeFormatter formatoHora = DateTimeFormatter.ofPattern("HH:mm");
 
         for (Cita cita : listaDeCitas) {
-            String fechaHora = cita.getFechaHora().format(formatter);
+            String fecha = cita.getFechaHora().toLocalDate().format(formatoFecha);
+            String hora = cita.getFechaHora().toLocalTime().format(formatoHora);
             String paciente = cita.getPaciente().getNombre() + " " + cita.getPaciente().getApellido();
             String estado = cita.getEstado().toString();
 
-            modelo.addRow(new Object[]{fechaHora, paciente, estado});
+            modelo.addRow(new Object[]{fecha, hora, paciente, estado});
         }
     }
     

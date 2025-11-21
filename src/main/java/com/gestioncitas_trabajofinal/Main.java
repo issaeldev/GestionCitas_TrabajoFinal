@@ -2,7 +2,8 @@ package com.gestioncitas_trabajofinal;
 
 import com.gestioncitas_trabajofinal.view.Login;
 import com.gestioncitas_trabajofinal.db.ConexionBD;
-
+import com.gestioncitas_trabajofinal.view.medico.HomeMedico;
+import com.gestioncitas_trabajofinal.model.Medico;
 /**
  * Clase principal que inicia la aplicación de gestión de citas.
  * Es el punto de entrada del programa y se encarga de lanzar la ventana de login,
@@ -30,7 +31,8 @@ public class Main {
         // Esta es la forma recomendada y más segura de iniciar aplicaciones Swing.
         java.awt.EventQueue.invokeLater(() -> {
             // Crea una instancia de la ventana de Login y la hace visible.
-            new Login().setVisible(true);
+           new Login().setVisible(true);
+
         });
     }
 }

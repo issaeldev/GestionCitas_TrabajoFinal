@@ -4,15 +4,14 @@ import com.gestioncitas_trabajofinal.db.ConexionBD;
 import com.gestioncitas_trabajofinal.model.*;
 import org.mindrot.jbcrypt.BCrypt;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
-/**
- * Implementación de LoginRepository.
- * Encargada exclusivamente de autenticar usuarios por sus credenciales.
- */
 public class LoginRepositoryImpl implements LoginRepository {
 
-    private Connection conexion;
+    private final Connection conexion;
 
     /**
      * Establece la conexión con la base de datos al crear el repositorio.
@@ -38,13 +37,26 @@ public class LoginRepositoryImpl implements LoginRepository {
             ResultSet rs = stmt.executeQuery();
 
             if (rs.next()) {
-                // Obtener la contraseña encriptada del usuario de la base de datos
                 String storedHashedPassword = rs.getString("password");
+                Rol rol = Rol.valueOf(rs.getString("rol"));
 
-                if (BCrypt.checkpw(password, storedHashedPassword)) {
-                    Rol rol = Rol.valueOf(rs.getString("rol"));
+                boolean passwordValida = false;
 
-                    // Delegamos según el rol del usuario
+                // ✅ Verificación dual: BCrypt o texto plano
+                if (storedHashedPassword != null) {
+                    if (storedHashedPassword.startsWith("$2a$")
+                            || storedHashedPassword.startsWith("$2b$")
+                            || storedHashedPassword.startsWith("$2y$")) {
+                        // Contraseña hasheada con BCrypt
+                        passwordValida = BCrypt.checkpw(password, storedHashedPassword);
+                    } else {
+                        // Contraseña almacenada en texto plano (modo prueba)
+                        passwordValida = password.equals(storedHashedPassword);
+                    }
+                }
+
+                if (passwordValida) {
+                    // Retornar el tipo de usuario según su rol
                     return switch (rol) {
                         case MEDICO -> construirMedicoDesdeBase(rs);
                         case PACIENTE -> construirPacienteDesdeBase(rs);
@@ -63,10 +75,6 @@ public class LoginRepositoryImpl implements LoginRepository {
     /**
      * Construye un objeto Medico a partir del ResultSet de la tabla usuarios.
      * También consulta la especialidad correspondiente desde la tabla medicos.
-     *
-     * @param rs ResultSet con los datos del usuario
-     * @return Objeto Medico completo
-     * @throws SQLException Si ocurre un error al acceder a la base de datos
      */
     private Medico construirMedicoDesdeBase(ResultSet rs) throws SQLException {
         Medico medico = new Medico();
@@ -82,7 +90,7 @@ public class LoginRepositoryImpl implements LoginRepository {
         medico.setFechaNacimiento(rs.getDate("fecha_nacimiento"));
         medico.setDireccion(rs.getString("direccion"));
 
-        // Consulta la especialidad del médico (id + nombre)
+        // Consulta la especialidad del médico
         String sqlEspecialidad = """
             SELECT e.id AS id_especialidad, e.nombre AS nombre_especialidad 
             FROM medicos m 
@@ -105,10 +113,6 @@ public class LoginRepositoryImpl implements LoginRepository {
 
     /**
      * Construye un objeto Paciente a partir del ResultSet de la tabla usuarios.
-     *
-     * @param rs ResultSet con los datos del usuario
-     * @return Objeto Paciente
-     * @throws SQLException Si ocurre un error al acceder a la base de datos
      */
     private Paciente construirPacienteDesdeBase(ResultSet rs) throws SQLException {
         Paciente paciente = new Paciente();

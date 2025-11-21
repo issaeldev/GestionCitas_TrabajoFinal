@@ -11,10 +11,11 @@ import java.util.Properties;
 public class EmailNotifierObserver implements Observer {
 
     private final String remitente = "hospitalnacionalh@gmail.com";
-    private final String contrasena = "hkzaiuqmwpetxwwv"; 
+    private final String contrasena = "hkzaiuqmwpetxwwv";
 
     @Override
     public void update(Cita cita) {
+
         String emailPaciente = cita.getPaciente().getUsername();
         String nombrePaciente = cita.getPaciente().getNombre();
         String nombreMedico = "Dr(a). " + cita.getMedico().getNombre() + " " + cita.getMedico().getApellido();
@@ -22,29 +23,53 @@ public class EmailNotifierObserver implements Observer {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy 'a las' HH:mm 'hrs.'");
         String fechaHora = cita.getFechaHora().format(formatter);
-        
+
         String motivo = cita.getMotivo() != null ? cita.getMotivo() : "No especificado";
 
-        String asunto = "Confirmación de su Cita Médica";
-        String cuerpo = """
-                Hola %s,
+        String asunto = "Confirmación de Cita Médica – CitaSmart";
 
-                Le confirmamos que su cita ha sido registrada exitosamente con los siguientes detalles:
 
-                - Médico: %s
-                - Especialidad: %s
-                - Fecha y Hora: %s
-                - Motivo: %s
+        //      CORREO EN HTML
+      
+        String cuerpoHTML = """
+            <html>
+            <body style="font-family: Arial, sans-serif; background:#f4f4f7; padding:20px;">
+                
+                <div style="max-width: 520px; margin:auto; background:white; padding:25px; border-radius:10px; box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+                    
+                    <h2 style="color:#0069c0; text-align:center; margin-top:0;">
+                        Confirmación de Cita Médica
+                    </h2>
 
-                Puede cancelar esta cita o volver a programarla desde su panel de usuario.
+                    <p>Hola <strong>%s</strong>,</p>
 
-                Gracias por confiar en CitaSmart.
-                """.formatted(nombrePaciente, nombreMedico, especialidad, fechaHora, motivo);
+                    <p>Su cita ha sido registrada exitosamente con los siguientes detalles:</p>
 
-        enviarCorreo(emailPaciente, asunto, cuerpo);
+                    <div style="background:#eef6ff; padding:15px; border-radius:8px;">
+                        <p><strong>Médico:</strong> %s</p>
+                        <p><strong>Especialidad:</strong> %s</p>
+                        <p><strong>Fecha y Hora:</strong> %s</p>
+                        <p><strong>Motivo:</strong> %s</p>
+                    </div>
+
+                    <p style="margin-top:20px;">
+                        Puede cancelar o reprogramar su cita desde su panel de usuario.
+                    </p>
+
+                    <p style="text-align:center; color:#888; margin-top:30px; font-size:12px;">
+                        Gracias por confiar en <strong>CitaSmart</strong>.
+                    </p>
+                </div>
+
+            </body>
+            </html>
+        """.formatted(nombrePaciente, nombreMedico, especialidad, fechaHora, motivo);
+
+        enviarCorreo(emailPaciente, asunto, cuerpoHTML);
     }
 
-    private void enviarCorreo(String destinatario, String asunto, String cuerpo) {
+    private void enviarCorreo(String destinatario, String asunto, String cuerpoHTML) {
+
         Properties props = new Properties();
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.starttls.enable", "true");
@@ -63,7 +88,9 @@ public class EmailNotifierObserver implements Observer {
             mensaje.setFrom(new InternetAddress(remitente));
             mensaje.setRecipients(Message.RecipientType.TO, InternetAddress.parse(destinatario));
             mensaje.setSubject(asunto);
-            mensaje.setText(cuerpo);
+
+            // 💡 Aquí está la clave para permitir HTML
+            mensaje.setContent(cuerpoHTML, "text/html; charset=UTF-8");
 
             Transport.send(mensaje);
             System.out.println("Correo enviado correctamente a " + destinatario);

@@ -13,7 +13,7 @@ public class ConexionBD {
 
     private static final String URL = "jdbc:mysql://localhost:3306/gestion_citas";
     private static final String USER = "root";
-    private static final String PASSWORD = "localhost";
+    private static final String PASSWORD = "admin"; // Varia por la BD
     
     // 1. Variable estática y privada para guardar la única instancia de la conexión.
     private static Connection connection = null;

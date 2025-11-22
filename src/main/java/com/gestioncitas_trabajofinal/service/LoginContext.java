@@ -23,10 +23,11 @@ public class LoginContext<T extends Usuario> {
     /**
      * Ejecuta la estrategia de inicio de sesión para el usuario proporcionado.
      * @param usuario El usuario que ha iniciado sesión.
+     * @param plainPassword La contraseña en texto plano del usuario.
      */
-    public void ejecutarLogin(T usuario) {
+    public void ejecutarLogin(T usuario, String plainPassword) {
         if (strategy != null) {
-            strategy.login(usuario);
+            strategy.login(usuario, plainPassword);
         } else {
             System.out.println("Estrategia no definida.");
         }

@@ -18,13 +18,26 @@ public class ProfilePaciente extends javax.swing.JFrame {
 
     private final Paciente paciente;
     private final PacienteController pacienteController;
-            
+    private boolean passwordVisible = false;
+    private JButton btnTogglePassword;
+    private String plainPassword; // Contraseña en texto plano
+
     /**
      * Constructor que inicializa la ventana con los datos del paciente.
      * @param paciente El paciente que ha iniciado sesión.
      */
     public ProfilePaciente(Paciente paciente) {
+        this(paciente, null);
+    }
+
+    /**
+     * Constructor que inicializa la ventana con los datos del paciente y su contraseña.
+     * @param paciente El paciente que ha iniciado sesión.
+     * @param plainPassword La contraseña en texto plano del usuario.
+     */
+    public ProfilePaciente(Paciente paciente, String plainPassword) {
         this.paciente = paciente;
+        this.plainPassword = plainPassword;
         this.pacienteController = new PacienteController();
         initComponents();
         cargarDatosPaciente();
@@ -41,12 +54,20 @@ public class ProfilePaciente extends javax.swing.JFrame {
         txtApellido.setText(paciente.getApellido());
         txtTelefono.setText(paciente.getTelefono());
         txtDireccion.setText(paciente.getDireccion());
-        txtPassword.setText(paciente.getPassword()); // Considerar mostrar "****" por seguridad
+        // Si tenemos la contraseña en texto plano, mostrarla
+        if (plainPassword != null && !plainPassword.isEmpty()) {
+            txtPassword.setText(plainPassword);
+            txtPassword.setEchoChar('•'); // Mostrar la contraseña como puntos
+        } else {
+            // Si no tenemos la contraseña en texto plano, dejar vacío
+            txtPassword.setText("");
+            txtPassword.setEchoChar('•');
+        }
         dateChooserFechaNacimiento.setDate(paciente.getFechaNacimiento());
         labelDni.setText(paciente.getDni());
         labelUsername.setText(paciente.getUsername());
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     // Generated using JFormDesigner Evaluation license - Issael
@@ -82,7 +103,8 @@ public class ProfilePaciente extends javax.swing.JFrame {
         btnActualizarPerfil = new JButton();
         nombreLabel9 = new JLabel();
         txtTelefono = new JTextField();
-        txtPassword = new JTextField();
+        txtPassword = new JPasswordField();
+        btnTogglePassword = new JButton();
         txtNombre = new JTextField();
         txtApellido = new JTextField();
         labelDni = new JLabel();
@@ -98,10 +120,10 @@ public class ProfilePaciente extends javax.swing.JFrame {
         {
             jPanel1.setBackground(Color.white);
             jPanel1.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder(
-            0, 0, 0, 0) , "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e", javax. swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder
-            . BOTTOM, new java .awt .Font ("Dialo\u0067" ,java .awt .Font .BOLD ,12 ), java. awt. Color.
+            0, 0, 0, 0) , "JF\u006frmDes\u0069gner \u0045valua\u0074ion", javax. swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder
+            . BOTTOM, new java .awt .Font ("D\u0069alog" ,java .awt .Font .BOLD ,12 ), java. awt. Color.
             red) ,jPanel1. getBorder( )) ); jPanel1. addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .
-            beans .PropertyChangeEvent e) {if ("borde\u0072" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
+            beans .PropertyChangeEvent e) {if ("\u0062order" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
             jPanel1.setLayout(null);
 
             //---- userIcon ----
@@ -344,9 +366,22 @@ public class ProfilePaciente extends javax.swing.JFrame {
             txtPassword.setBackground(Color.white);
             txtPassword.setForeground(Color.black);
             txtPassword.setBorder(null);
+            txtPassword.setEchoChar('•');
             txtPassword.addActionListener(e -> txtPasswordActionPerformed(e));
             jPanel1.add(txtPassword);
-            txtPassword.setBounds(530, 400, 190, 20);
+            txtPassword.setBounds(530, 400, 160, 20);
+
+            //---- btnTogglePassword ----
+            btnTogglePassword.setBackground(Color.white);
+            btnTogglePassword.setText("👁");
+            btnTogglePassword.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
+            btnTogglePassword.setBorder(null);
+            btnTogglePassword.setFocusPainted(false);
+            btnTogglePassword.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+            btnTogglePassword.setToolTipText("Mostrar/Ocultar contraseña");
+            btnTogglePassword.addActionListener(e -> btnTogglePasswordActionPerformed(e));
+            jPanel1.add(btnTogglePassword);
+            btnTogglePassword.setBounds(695, 398, 25, 24);
 
             //---- txtNombre ----
             txtNombre.setBackground(Color.white);
@@ -479,6 +514,24 @@ public class ProfilePaciente extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtDireccionActionPerformed
 
+    /**
+     * Alterna entre mostrar y ocultar la contraseña.
+     * @param evt El evento de acción.
+     */
+    private void btnTogglePasswordActionPerformed(java.awt.event.ActionEvent evt) {
+        if (passwordVisible) {
+            // Ocultar contraseña
+            txtPassword.setEchoChar('•');
+            btnTogglePassword.setText("👁");
+            passwordVisible = false;
+        } else {
+            // Mostrar contraseña
+            txtPassword.setEchoChar((char) 0);
+            btnTogglePassword.setText("👁‍🗨");
+            passwordVisible = true;
+        }
+    }
+
     // ------------------- MÉTODOS PRIVADOS DE AYUDA -------------------
 
     /**
@@ -490,12 +543,12 @@ public class ProfilePaciente extends javax.swing.JFrame {
         String apellido = txtApellido.getText().trim();
         String direccion = txtDireccion.getText().trim();
         String telefono = txtTelefono.getText().trim();
-        String password = txtPassword.getText().trim();
+        String password = new String(txtPassword.getPassword()).trim();
         Date fechaNacimiento = dateChooserFechaNacimiento.getDate();
-        
-        // Validación simple de campos no vacíos
-        if (nombre.isEmpty() || apellido.isEmpty() || direccion.isEmpty() || telefono.isEmpty() || password.isEmpty() || fechaNacimiento == null) {
-            JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios.", "Error de validación", JOptionPane.ERROR_MESSAGE);
+
+        // Validación simple de campos no vacíos (excepto contraseña que es opcional)
+        if (nombre.isEmpty() || apellido.isEmpty() || direccion.isEmpty() || telefono.isEmpty() || fechaNacimiento == null) {
+            JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios (excepto contraseña).", "Error de validación", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
@@ -504,7 +557,13 @@ public class ProfilePaciente extends javax.swing.JFrame {
         paciente.setApellido(apellido);
         paciente.setDireccion(direccion);
         paciente.setTelefono(telefono);
-        paciente.setPassword(password);
+
+        // Solo actualizar la contraseña si el usuario ingresó una nueva
+        if (!password.isEmpty()) {
+            paciente.setPassword(password);
+            plainPassword = password; // Actualizar la contraseña en memoria
+        }
+
         paciente.setFechaNacimiento(fechaNacimiento);
 
         // Llama al controlador para persistir los cambios
@@ -512,6 +571,11 @@ public class ProfilePaciente extends javax.swing.JFrame {
 
         if (actualizado) {
             JOptionPane.showMessageDialog(this, "Datos actualizados correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            // Mostrar la contraseña actualizada (oculta con puntos)
+            if (!password.isEmpty()) {
+                txtPassword.setText(plainPassword);
+                txtPassword.setEchoChar('•');
+            }
         } else {
             JOptionPane.showMessageDialog(this, "Error al actualizar los datos.", "Error", JOptionPane.ERROR_MESSAGE);
         }
@@ -550,7 +614,7 @@ public class ProfilePaciente extends javax.swing.JFrame {
     private JButton btnActualizarPerfil;
     private JLabel nombreLabel9;
     private JTextField txtTelefono;
-    private JTextField txtPassword;
+    private JPasswordField txtPassword;
     private JTextField txtNombre;
     private JTextField txtApellido;
     private JLabel labelDni;

@@ -26,6 +26,9 @@ public class Login extends javax.swing.JFrame {
     // Variables para el Captcha
     private CaptchaGenerator captchaGenerator;
     private String currentCaptchaText;
+    // Variable para controlar visibilidad de contraseña
+    private boolean passwordVisible = false;
+    private JButton btnTogglePassword;
 
     /**
      * Constructor que inicializa los componentes de la ventana y las dependencias.
@@ -60,6 +63,7 @@ public class Login extends javax.swing.JFrame {
         div2 = new JSeparator();
         ingresarBtn = new JButton();
         registrarseBtn = new JButton();
+        btnTogglePassword = new JButton();
         background = new JLabel();
 
         //======== this ========
@@ -121,9 +125,21 @@ public class Login extends javax.swing.JFrame {
             //---- passTxt ----
             passTxt.setBorder(null);
             jPanel1.add(passTxt);
-            passTxt.setBounds(350, 330, 320, 30);
+            passTxt.setBounds(350, 330, 290, 30);
             jPanel1.add(div2);
             div2.setBounds(350, 360, 320, div2.getPreferredSize().height);
+
+            //---- btnTogglePassword ----
+            btnTogglePassword.setBackground(Color.white);
+            btnTogglePassword.setText("👁");
+            btnTogglePassword.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 16));
+            btnTogglePassword.setBorder(null);
+            btnTogglePassword.setFocusPainted(false);
+            btnTogglePassword.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+            btnTogglePassword.setToolTipText("Mostrar/Ocultar contraseña");
+            btnTogglePassword.addActionListener(e -> btnTogglePasswordActionPerformed(e));
+            jPanel1.add(btnTogglePassword);
+            btnTogglePassword.setBounds(645, 333, 25, 24);
 
             //---- ingresarBtn ----
             ingresarBtn.setText("INGRESAR");
@@ -199,6 +215,24 @@ public class Login extends javax.swing.JFrame {
         realizarLogin();
     }//GEN-LAST:event_ingresarBtnActionPerformed
 
+    /**
+     * Alterna entre mostrar y ocultar la contraseña en el login.
+     * @param evt El evento de acción.
+     */
+    private void btnTogglePasswordActionPerformed(java.awt.event.ActionEvent evt) {
+        if (passwordVisible) {
+            // Ocultar contraseña
+            passTxt.setEchoChar('•');
+            btnTogglePassword.setText("👁");
+            passwordVisible = false;
+        } else {
+            // Mostrar contraseña
+            passTxt.setEchoChar((char) 0);
+            btnTogglePassword.setText("👁‍🗨");
+            passwordVisible = true;
+        }
+    }
+
     // ------------------- MÉTODOS PRIVADOS DE AYUDA -------------------
 
     /**
@@ -207,8 +241,8 @@ public class Login extends javax.swing.JFrame {
     private void realizarLogin() {
         String correo = userTxt.getText().trim();
         String password = new String(passTxt.getPassword()).trim();
-        
-        
+
+
         // Mostrar el diálogo de verificación captcha
         CaptchaDialog captchaDialog = new CaptchaDialog(this, true);
         captchaDialog.setLocationRelativeTo(this);
@@ -219,7 +253,7 @@ public class Login extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Debes verificar el captcha antes de iniciar sesión.", "Verificación requerida", JOptionPane.WARNING_MESSAGE);
             return;
         }
-        
+
 
         if (correo.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Por favor, ingrese correo y contraseña.", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
@@ -229,7 +263,7 @@ public class Login extends javax.swing.JFrame {
         Usuario usuario = loginController.login(correo, password);
 
         if (usuario != null) {
-            redirigirUsuario(usuario);
+            redirigirUsuario(usuario, password); // Pasar la contraseña en texto plano
             this.dispose(); // Cierra la ventana de login
         } else {
             JOptionPane.showMessageDialog(this, "Credenciales incorrectas. Por favor, intente de nuevo.", "Error de autenticación", JOptionPane.ERROR_MESSAGE);
@@ -239,15 +273,16 @@ public class Login extends javax.swing.JFrame {
     /**
      * Redirige al usuario a su panel correspondiente basado en su rol.
      * @param usuario El usuario autenticado.
+     * @param plainPassword La contraseña en texto plano del usuario.
      */
-    private void redirigirUsuario(Usuario usuario) {
+    private void redirigirUsuario(Usuario usuario, String plainPassword) {
         switch (usuario.getRol()) {
             case PACIENTE -> {
                 if (usuario instanceof Paciente paciente) {
                     // Creamos un LoginContext específico para Paciente
                     LoginContext<Paciente> pacienteContext = new LoginContext<>();
                     pacienteContext.setStrategy(new PacienteLoginStrategy());
-                    pacienteContext.ejecutarLogin(paciente);
+                    pacienteContext.ejecutarLogin(paciente, plainPassword);
                 }
             }
             case MEDICO -> {
@@ -255,7 +290,7 @@ public class Login extends javax.swing.JFrame {
                     // Creamos un LoginContext específico para Medico
                     LoginContext<Medico> medicoContext = new LoginContext<>();
                     medicoContext.setStrategy(new MedicoLoginStrategy());
-                    medicoContext.ejecutarLogin(medico);
+                    medicoContext.ejecutarLogin(medico, plainPassword);
                 }
             }
             default -> JOptionPane.showMessageDialog(this, "Rol de usuario no reconocido.", "Error", JOptionPane.ERROR_MESSAGE);

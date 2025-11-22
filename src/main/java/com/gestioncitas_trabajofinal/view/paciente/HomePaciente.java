@@ -19,13 +19,24 @@ public class HomePaciente extends javax.swing.JFrame
 {
 
     private Paciente paciente;
+    private String plainPassword; // Contraseña en texto plano
 
     /**
      * Crea una nueva instancia de HomePaciente.
      * @param paciente El objeto Paciente que ha iniciado sesión.
      */
     public HomePaciente(Paciente paciente) {
+        this(paciente, null);
+    }
+
+    /**
+     * Crea una nueva instancia de HomePaciente con la contraseña en texto plano.
+     * @param paciente El objeto Paciente que ha iniciado sesión.
+     * @param plainPassword La contraseña en texto plano del usuario.
+     */
+    public HomePaciente(Paciente paciente, String plainPassword) {
         this.paciente = paciente;
+        this.plainPassword = plainPassword;
         initComponents();
         txtNombre.setText("Bienvenid@ " + paciente.getNombre());
         usernameLbl.setText(paciente.getUsername());
@@ -366,7 +377,7 @@ public class HomePaciente extends javax.swing.JFrame
     }// </editor-fold>//GEN-END:initComponents
 
     private void perfilBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilBtnActionPerformed
-        new ProfilePaciente(paciente).setVisible(true);
+        new ProfilePaciente(paciente, plainPassword).setVisible(true);
         this.dispose();
     }//GEN-LAST:event_perfilBtnActionPerformed
 
